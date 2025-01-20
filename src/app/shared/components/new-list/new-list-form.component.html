@@ -1,0 +1,7 @@
+<form class="form" [formGroup]="newListForm" (ngSubmit)="onSubmit()">
+  <input type="text" formControlName="listName" class="form__input" placeholder="New list title" #input (input)="onInput(input.value)" />
+
+  <button class="btn form__submit-btn" type="submit" [disabled]="!newListForm.valid">
+    <i class="fa-solid fa-plus"></i>
+  </button>
+</form>

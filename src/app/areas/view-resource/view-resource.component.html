@@ -1,0 +1,16 @@
+<h5 *ngIf="!showVideo && !error" class="player__error-message">Search for a video or choose one from one of your lists and it will appear here.</h5>
+
+<h5 *ngIf="error" class="player__error-message">
+  {{ this.errMessage }}
+</h5>
+
+<div *ngIf="showVideo" class="player__iframe">
+  <youtube-player #youtubeContainer [videoId]="selectedVid.youtubeID" [height]="600" [width]="1080" loadApi="false" disableCookies="true" disablePlaceholder="true" suggestedQuality="highres"></youtube-player>
+</div>
+
+<div *ngIf="showVideo" class="player__title-container">
+  <add-remove-video-from-list class="player__buttons-container"></add-remove-video-from-list>
+  <h4 class="player__title">
+    {{ selectedVid.title }}
+  </h4>
+</div>

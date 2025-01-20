@@ -1,0 +1,85 @@
+/* overlay */
+
+.overlay-background {
+  position: fixed;
+  left: 0;
+  height: 0;
+  width: 100vw;
+  z-index: 1;
+  background-color: transparent;
+  transition: $overlay-background-transition-out;
+}
+
+/* dropdown */
+
+.dropdown-container {
+  // visibility: hidden;
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  z-index: 1;
+  transition: $dropdown-transition-out;
+  box-shadow: transparent;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 0.2rem;
+    height: calc(100% + 2.5rem);
+    background: #dc3545;
+    left: 0;
+    bottom: 0;
+  }
+}
+
+.dropdown-content {
+  padding: 1rem 0.75rem;
+  background-color: $white;
+}
+
+/* search dropdown */
+
+search-bar .error-line {
+  width: 0.2rem;
+  height: 2.5rem;
+  background: #dc3545;
+}
+
+search-bar .dropdown-container {
+  top: 0;
+}
+
+search-bar p {
+  font-weight: 500;
+}
+
+search-bar li {
+  font-size: 0.90rem;
+}
+
+search-bar .form:focus-within.ng-dirty.ng-invalid~.dropdown-container {
+  // visibility: visible;
+  max-height: 800px;
+  opacity: 1;
+  transition: $dropdown-transition-in;
+  box-shadow: $box-shadow;
+}
+
+search-bar .overlay-background:has(+.form-container .form:focus-within.ng-dirty.ng-invalid) {
+  height: 100vh;
+  top: calc($search-bar-form-height + $spacer / 1.33 * 2);
+  background-color: $overlay-background;
+  //transition: $overlay-background-transition;
+}
+
+/* list dropdown */
+
+#list .overlay-background:has(+.list__title-container .fa-caret-up) {
+  top: 0;
+  height: 100vh;
+  background-color: $overlay-background;
+  //transition: $overlay-background-transition;
+  z-index: 1;
+}

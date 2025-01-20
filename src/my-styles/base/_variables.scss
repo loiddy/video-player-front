@@ -1,0 +1,251 @@
+// Color system
+//
+
+$white: #fff;
+$gray-1: #f8f9fa;
+$gray-2: #dddcdc;
+$gray-3: #6c757d;
+$gray-4: #343a40;
+$gray-5: #212529;
+$black: #000;
+
+$red: #dc3545;
+$tomato: #ff6347;
+
+$primary: $gray-5;
+$warning: $red;
+$light: $gray-1;
+$border: $gray-2;
+$muted: $gray-3;
+$dark: $gray-4;
+$overlay-background: rgba(0, 0, 0, 0.4);
+
+
+// Breakpoints
+//
+
+/* min-widths */
+$xs: 300px;
+$sm: 580px;
+$md: 720px;
+$lg: 900px;
+$xl: 1030px;
+
+/* 'specials' */
+$player-and-resource--column: '(min-height: 480px) and (min-width: #{$md})';
+
+
+// Typography
+//
+
+$font-family-sans-serif: -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    "Noto Sans",
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji";
+$font-family-monospace: SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    "Liberation Mono",
+    "Courier New",
+    monospace;
+$font-weight-normal: 400;
+$font-weight-bold: 500;
+$font-weight-bolder: bolder;
+
+$font-family-base: $font-family-sans-serif;
+$font-size-base: 1rem; // Assumes the browser default, typically `16px`
+$font-weight-base: $font-weight-normal;
+$line-height-base: 1.5;
+$btn-line-height: 1.25;
+
+
+// Fluid Typography
+//
+
+$min_width: $xs;
+$max_width: $lg;
+$min_font: 16px;
+$max_font: 16px;
+
+
+// Headings
+//
+
+$h1-font-size: $font-size-base * 2.5;
+$h2-font-size: $font-size-base * 2;
+$h3-font-size: $font-size-base * 1.75;
+$h4-font-size: $font-size-base * 1.5;
+$h5-font-size: $font-size-base * 1.25;
+$h6-font-size: $font-size-base;
+
+$headings-font-family: null;
+$headings-font-weight: 500;
+$headings-line-height: 1.2;
+$headings-color: null;
+
+$dt-font-weight: $font-weight-bold;
+
+$text-muted: $muted;
+
+
+// Spacing
+//
+
+$spacer: 1rem;
+
+
+//Type
+//
+
+$headings-mb: calc($spacer / 2);
+$paragraph-mb: 0;
+
+
+// Layout
+//
+
+$list-padding-top: 3.5rem;
+$list-title-height: calc($h2-font-size * $headings-line-height + $headings-mb);
+$main-padding-top: calc($list-padding-top + 1rem + $list-title-height - 1rem);
+$search-bar-form-height: calc(1rem * 1.25 + 0.75rem);
+
+
+// Page
+//
+
+$pg-px: $spacer;
+
+
+// Section
+//
+
+$section-py: calc($spacer / 2);
+$section-px: $spacer;
+
+
+// Main nav
+//
+
+$nav-btn-p: 0.35rem; // used in list
+
+
+// Body
+//
+
+$body-bg: $light !default;
+$body-color: $gray-5 !default;
+
+
+// Links
+//
+
+$link-color: $primary !default;
+$link-decoration: none !default;
+$link-hover-color: #000 !default; //darken($link-color, 15%) !default;
+$link-hover-decoration: underline !default;
+
+
+// Forms
+
+$label-mb: .5rem !default;
+
+
+// Tables
+//
+
+$table-cell-p: .75rem !default;
+$table-caption-color: $text-muted !default;
+
+
+// Options
+//
+// Modify global styling by enabling or disabling optional features.
+
+$enable-pointer-cursor-for-buttons: true !default;
+
+
+// Box-shadow
+//
+
+$box-shadow: 0 0.25rem 0.125rem 0 rgba(0, 0, 0, 0.05);
+
+
+// Transitions 
+//
+
+$btn-transition: color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out;
+
+$opacity-show-transition: opacity 0.1s ease-in;
+
+$opacity-show-transition-out: opacity 0.12s ease-out,
+    max-width 0.15s ease-out,
+    padding 0s 0.1s;
+
+$dropdown-transition-in: opacity 0.06s ease-in, max-height 0.35s ease-in, box-shadow 0s 0.06s;
+
+$dropdown-transition-out: opacity 0.07s 0.10s, max-height 0.20s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0s 0.06s;
+
+$overlay-background-transition: background-color 0.2s ease-in;
+
+$overlay-background-transition-out: background-color 0.2s ease-out;
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+// REBOOT VARIABLES
+
+/*
+// html
+$black: #000 !default;
+
+// body 
+$font-family-base: $font-family-sans-serif !default;
+$font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
+$font-weight-base: $font-weight-normal !default;
+$line-height-base: 1.5 !default;
+
+$body-bg: $white !default;
+$body-color: $gray-5 !default;
+
+// h1, h2, h3, h4, h5, h6 
+$headings-margin-bottom: $spacer / 2 !default; // 1rem
+
+// p
+$paragraph-margin-bottom: 1rem !default;
+
+//dt
+$dt-font-weight: $font-weight-bold !default; // 700
+
+//b, strong
+$font-weight-bolder: bolder !default;
+
+// a 
+$link-color: theme-color("primary") !default;
+$link-decoration: none !default;
+
+// a:hover 
+$link-hover-color: darken($link-color, 15%) !default;
+$link-hover-decoration: underline !default;
+
+// pre, code, kbd, samp 
+$font-family-monospace: SFMono-Regular,
+Menlo,
+Monaco,
+Consolas,
+"Liberation Mono",
+"Courier New",
+monospace !default;
+
+// caption
+$table-cell-padding: .75rem !default;
+$table-caption-color: $text-muted !default;
+*/

@@ -1,0 +1,35 @@
+<div id="list">
+  <div class="overlay-background"></div>
+
+  <div class="list__title-container">
+    <h4 class="list__title">
+      {{ listName | uppercaseFirstLetter }}
+    </h4>
+
+    <route-button></route-button>
+
+    <button *ngIf="showDeleteButton" class="btn list__delete-btn" (click)="deleteList()">
+      <i class="fa-solid fa-trash"></i>
+    </button>
+  </div>
+
+  <p *ngIf="loading && !error" class="list__error-message">Loading...</p>
+
+  <p *ngIf="!loading && list.length === 0 && !error" class="list__error-message">This list is empty.</p>
+
+  <p *ngIf="error" class="list__error-message">
+    {{ this.errMessage }}
+  </p>
+
+  <div *ngIf="!error" class="list__items-container">
+    <button *ngFor="let vid of list" class="btn list__item-btn" [ngClass]="{ active: selectedVideoID === vid.videoID }" (click)="onClick(vid)">
+      <div class="list__item-btn__image">
+        <img loading="lazy" onload="this.style.opacity=1" src="{{ vid.thumbnailURL }}" alt="Video thumbnail" />
+      </div>
+
+      <div class="list__item-btn__text">
+        <p>{{ vid.title }}</p>
+      </div>
+    </button>
+  </div>
+</div>

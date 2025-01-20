@@ -1,0 +1,23 @@
+<button *ngIf="!isNavigationOpen; else closeNavigation" class="btn" (click)="toggleNavigation()">
+  <i class="fa-solid fa-caret-down"></i>
+</button>
+
+<ng-template #closeNavigation>
+  <button class="btn" (click)="toggleNavigation()">
+    <i class="fa-solid fa-caret-up"></i>
+  </button>
+</ng-template>
+
+<div *ngIf="isNavigationOpen" class="list__navigation-container">
+  <section>
+    <ul>
+      <li *ngFor="let list of lists">
+        <a [routerLink]="['/' + list.name]">{{ list.name | uppercaseFirstLetter }}</a>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <new-list-form (onNewListFormSubmit)="onNewListFormSubmit($event)"></new-list-form>
+  </section>
+</div>

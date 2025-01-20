@@ -1,0 +1,68 @@
+$page-max-width: 1750px;
+$app-gutters: 1rem;
+
+.grid-container {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100vw;
+  max-width: $page-max-width;
+  padding: 0 $app-gutters;
+  margin: 0 auto;
+
+  @media (min-width: $sm) {
+    display: grid;
+    grid-template-columns: [nav] minmax(100px, 250px) [main] minmax(59%, 100%);
+    height: 100vh;
+  }
+
+  @media (min-width: $md) {
+    grid-template-columns: [nav] minmax(250px, 350px) [main] minmax(59%, 100%);
+  }
+
+  @media (min-width: $lg) {
+    grid-template-columns: [nav] minmax(350px, 450px) [main] minmax(59%, 100%);
+  }
+}
+
+nav {
+  padding-top: $spacer;
+
+  @media (min-width: $sm) {
+    grid-column: nav;
+    padding-top: $list-padding-top;
+  }
+}
+
+main {
+  position: relative;
+  padding-top: 5rem;
+  padding-bottom: $spacer;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: -$spacer;
+    bottom: 0;
+    width: 100vw;
+    height: 0.5px;
+    background-color: $border;
+  }
+
+  @media (min-width: $sm) {
+    grid-column: main;
+    max-height: calc(100vh - $main-padding-top);
+    padding-top: $main-padding-top;
+    padding-bottom: 0;
+    padding-left: 0.75rem;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0.5px;
+      height: 100vh;
+      background-color: $border;
+    }
+  }
+}

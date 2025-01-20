@@ -1,0 +1,30 @@
+<button class="btn player-btns" (click)="showDialog()">
+  <i class="fa-solid fa-plus-minus"></i>
+</button>
+
+<dialog #dialog>
+  <div #dialogContent class="popup-content">
+    <section>
+      <h5 class="popup-title">Add or remove video from lists</h5>
+      <ul>
+        <ng-container *ngFor="let list of lists">
+          <li *ngIf="list.listID !== listIDs.History" class="btn-container" (click)="onClick($event, list.listID)" tabindex="0">
+            <span class="btn add-remove-btn" [ngClass]="{ 'fix-bookmark-btn-icon': list.listID === listIDs.Bookmarks }">
+              <i [ngClass]="[list.listID === listIDs.Bookmarks ? 'fa-bookmark' : 'fa-circle', video.inLists.includes(list.listID) ? 'fa-solid' : 'fa-regular']"></i>
+            </span>
+            {{ list.name | uppercaseFirstLetter }}
+          </li>
+        </ng-container>
+      </ul>
+    </section>
+
+    <section>
+      <h5 class="popup-title">Or create a new list and add video</h5>
+      <new-list-form (onNewListFormSubmit)="onNewListFormSubmit($event)"></new-list-form>
+    </section>
+
+    <button class="btn add-remove-btn popup-close-btn close-btn" (click)="closeDialog()">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+</dialog>

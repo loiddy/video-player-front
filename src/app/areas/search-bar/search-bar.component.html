@@ -1,0 +1,31 @@
+<div class="overlay-background"></div>
+
+<div class="form-container">
+  <form class="form" [formGroup]="newVideoForm" (ngSubmit)="onSubmit()">
+    <span class="form__warning-icon">
+      <i class="fas fa-exclamation-circle"></i>
+    </span>
+
+    <input #input (input)="onInput(input.value)" type="text" placeholder="Insert URL of YouTube video" formControlName="urlVideo" class="form__input" />
+
+    <button class="btn form__clear-btn" type="button" (click)="clearForm()">
+      <i class="fas fa-times"></i>
+    </button>
+
+    <button class="btn form__submit-btn" type="submit" [disabled]="!newVideoForm.valid">
+      <i class="fas fa-search"></i>
+    </button>
+  </form>
+
+  <div class="dropdown-container">
+    <div class="error-line"></div>
+    <div class="dropdown-content">
+      <p>The URL should look like this:</p>
+      <ul class="form__error-list">
+        <li>https://www.youtube.com/watch?v=2yXUwJyBfa4</li>
+        <li>https://m.youtube.com/watch?v=2yXUwJyBfa4</li>
+        <li>https://youtu.be/2yXUwJyBfa4</li>
+      </ul>
+    </div>
+  </div>
+</div>

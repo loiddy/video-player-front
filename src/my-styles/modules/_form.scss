@@ -1,0 +1,112 @@
+search-bar .form-container {
+  position: relative;
+  max-width: 600px;
+  padding: 0 calc($spacer / 1.33rem);
+  margin: 0 auto;
+}
+
+.form {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  width: 100%;
+  height: $search-bar-form-height;
+  border: 1px solid $border;
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+
+/* form__input */
+
+.form__input {
+  flex: 1 1 auto;
+  padding-left: calc($spacer / 1.33);
+  min-width: 10px;
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  background-clip: padding-box;
+  text-overflow: ellipsis;
+
+  &:focus {
+    padding-right: 0.75rem;
+  }
+}
+
+.form.ng-dirty>.form__input {
+  padding-right: 0;
+}
+
+
+/* form__clear-btn */
+
+.form__clear-btn {
+  visibility: hidden;
+  padding: 0;
+  opacity: 0;
+  color: $muted;
+  transition: $opacity-show-transition;
+}
+
+.form.ng-dirty>.form__clear-btn,
+.form.ng-dirty>.form__clear-btn {
+  visibility: visible;
+  padding: 0.375rem 0.75rem;
+  opacity: 1;
+}
+
+
+/* form__submit-btn */
+
+.form__submit-btn {
+  margin: -1px -1px -1px 0;
+  border-radius: 0 0.25rem 0.25rem 0;
+  transition: $btn-transition;
+}
+
+.form__error-list {
+  padding: calc($spacer / 4);
+}
+
+.form.ng-dirty>.form__submit-btn {
+  cursor: pointer;
+}
+
+.form.ng-dirty>.form__submit-btn:disabled {
+  background-color: $muted;
+  color: $white;
+}
+
+.form.ng-dirty>.form__submit-btn:not(:disabled) {
+  background-color: $dark;
+  color: $white;
+}
+
+.form:focus-within>.form__submit-btn:disabled {
+  background-color: $muted;
+  color: $white;
+}
+
+.form:focus-within>.form__submit-btn {
+  background-color: $dark;
+  color: $white;
+}
+
+
+/* form__warning */
+
+.form__warning-icon {
+  max-width: 0;
+  opacity: 0;
+  font-size: 1.25rem;
+  color: $red;
+  transition: $opacity-show-transition-out;
+}
+
+.form.ng-dirty.ng-invalid>.form__warning-icon {
+  max-width: 3rem;
+  padding-left: 0.75rem;
+  opacity: 1;
+  transition: $opacity-show-transition;
+}

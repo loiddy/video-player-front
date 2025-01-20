@@ -1,0 +1,28 @@
+dialog {
+    border: 0;
+    background-color: white;
+    padding: 0;
+    box-shadow: $box-shadow;
+}
+
+.popup-content {
+    padding: 2rem;
+}
+
+.popup-content>:not(section:first-of-type):not(button) {
+    padding-top: 1.75rem;
+}
+
+.popup-title {
+    padding-bottom: 0.75rem;
+}
+
+.popup-close-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}

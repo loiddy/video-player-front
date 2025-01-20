@@ -1,0 +1,16 @@
+#search-bar {
+  position: fixed;
+  padding: 0.75rem 1rem;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100vw;
+  background-color: #fff;
+  box-shadow: $box-shadow;
+}
+
+#list {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - $list-padding-top);
+}

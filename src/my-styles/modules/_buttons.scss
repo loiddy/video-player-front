@@ -1,0 +1,38 @@
+/* MODULES - buttons */
+.btn-container:hover {
+  cursor: pointer;
+}
+
+.btn {
+  padding: 0.375rem 0.75rem;
+  border: 0;
+  background-color: transparent;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: #24282c;
+  user-select: none;
+}
+
+.player-btns {
+  display: inline-block;
+  padding: 0.35rem 0;
+  border-bottom: 0.2rem solid transparent;
+  background-color: transparent;
+  font-size: 1.1rem;
+  transition: $btn-transition;
+}
+
+.add-remove-btn {
+  color: $dark;
+}
+
+.close-btn {
+  font-size: 1.25rem;
+}
+
+.fix-bookmark-btn-icon {
+  width: 40px;
+  display: inline-block;
+  text-align: center;
+}
