@@ -24,7 +24,7 @@
   <div *ngIf="!error" class="list__items-container">
     <button *ngFor="let vid of list" class="btn list__item-btn" [ngClass]="{ active: selectedVideoID === vid.videoID }" (click)="onClick(vid)">
       <div class="list__item-btn__image">
-        <img loading="lazy" onload="this.style.opacity=1" src="{{ vid.thumbnailURL }}" alt="Video thumbnail" />
+        <img loading="lazy" src="{{ vid.thumbnailURL }}" alt="Video thumbnail" />
       </div>
 
       <div class="list__item-btn__text">
